@@ -1,13 +1,10 @@
-import React from 'react'
-
-// React doesn't support use JSX.Element in props with React.FunctionalComponent
-// It's why we don't use FC type
+import React, {FC} from 'react'
 
 type containerProps = {
     children: JSX.Element | JSX.Element[]
 }
 
-const Container = (props: containerProps):JSX.Element => {
+const Container: FC<containerProps> = (props: containerProps) => {
     return (
         <div className="container">
             { props.children }
